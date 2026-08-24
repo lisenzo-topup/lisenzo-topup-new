@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LISENZO TOP UP — Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="brand">LISENZO <span>TOP UP</span></div>
+  <a class="admin-link" href="index.html">Store</a>
+</header>
+<main class="admin-main">
+  <section class="admin-card">
+    <h1>Admin Dashboard</h1>
+    <p class="muted">এটি একটি local demo dashboard। Production deployment-এর আগে secure server-side authentication/database যুক্ত করতে হবে।</p>
+    <div class="admin-grid">
+      <div>
+        <h2>Products</h2>
+        <form id="productForm">
+          <input id="pName" placeholder="Product name" required>
+          <input id="pPrice" type="number" placeholder="Price" required>
+          <button class="primary">Add Product</button>
+        </form>
+        <div id="adminProducts"></div>
+      </div>
+      <div>
+        <h2>Orders</h2>
+        <div id="orders"></div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>

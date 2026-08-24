@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LISENZO TOP UP — eFootball Coins</title>
+<meta name="description" content="Fast and secure eFootball Coin Top-Up service">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="brand">LISENZO <span>TOP UP</span></div>
+  <a class="admin-link" href="admin.html">Admin</a>
+</header>
+
+<main>
+  <section class="notice">📢 eFootball Coin Top-Up — Fast & Secure Service</section>
+
+  <section class="hero">
+    <div class="ball">⚽</div>
+    <h1>eFootball Coin Top-Up</h1>
+    <p>Fast Delivery • Secure Payment • Trusted Service</p>
+  </section>
+
+  <section class="section">
+    <h2>⚽ eFootball Coins</h2>
+    <p class="muted">আপনার প্রয়োজনের প্যাকেজটি নির্বাচন করুন</p>
+    <div id="products" class="grid"></div>
+  </section>
+</main>
+
+<footer>
+  <strong>LISENZO TOP UP</strong>
+  <div>eFootball Coin Top-Up Service</div>
+  <div>© 2026 LISENZO TOP UP</div>
+</footer>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-card">
+    <button class="close" onclick="closeOrder()">×</button>
+    <h2>অর্ডার করুন</h2>
+    <div id="selectedProduct"></div>
+    <form id="orderForm">
+      <label>eFootball User ID
+        <input id="userId" required placeholder="আপনার User ID">
+      </label>
+      <label>আপনার নাম
+        <input id="customerName" required placeholder="নাম">
+      </label>
+      <label>যোগাযোগ নম্বর
+        <input id="phone" required placeholder="01XXXXXXXXX">
+      </label>
+      <label>Payment Method
+        <select id="payment" required>
+          <option value="">Select</option>
+          <option>bKash</option>
+          <option>Nagad</option>
+          <option>Rocket</option>
+        </select>
+      </label>
+      <label>Transaction ID
+        <input id="trx" required placeholder="Payment Transaction ID">
+      </label>
+      <button class="primary" type="submit">অর্ডার Submit করুন</button>
+    </form>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
