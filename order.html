@@ -3,256 +3,211 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order - LISENZO TOP UP</title>
+  <title>Order — LISENZO TOP UP</title>
+  <link rel="stylesheet" href="style.css">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f5fa;
-      color: #111827;
-    }
-
-    header {
-      background: #ffffff;
-      padding: 22px 6%;
-      font-size: 24px;
-      font-weight: bold;
-      color: #f59e0b;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .container {
-      max-width: 700px;
-      margin: 50px auto;
-      padding: 20px;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 18px;
+    .order-box {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
       padding: 30px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.08);
     }
 
-    h1 {
-      margin-top: 0;
-      text-align: center;
-    }
-
-    .product {
-      background: #111827;
-      color: white;
-      padding: 22px;
-      border-radius: 14px;
+    .selected-product {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 12px;
+      padding: 20px;
       margin-bottom: 25px;
     }
 
-    .product-name {
-      font-size: 23px;
-      font-weight: bold;
+    .selected-product h2 {
+      margin-top: 0;
     }
 
-    .price {
-      color: #f59e0b;
-      font-size: 27px;
-      font-weight: bold;
-      margin-top: 8px;
+    .form-group {
+      margin-bottom: 18px;
     }
 
-    label {
+    .form-group label {
       display: block;
-      margin-top: 18px;
+      font-weight: 700;
       margin-bottom: 7px;
-      font-weight: bold;
     }
 
-    input, select {
+    .form-group input {
       width: 100%;
+      box-sizing: border-box;
       padding: 13px;
-      border: 1px solid #d1d5db;
+      border: 1px solid #ddd;
       border-radius: 9px;
       font-size: 16px;
-      outline: none;
     }
 
-    input:focus, select:focus {
-      border-color: #f59e0b;
-    }
-
-    button {
+    .submit-btn {
       width: 100%;
-      margin-top: 25px;
-      padding: 15px;
       border: none;
-      border-radius: 9px;
       background: #f59e0b;
       color: white;
-      font-size: 18px;
-      font-weight: bold;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 700;
       cursor: pointer;
     }
 
-    button:hover {
+    .submit-btn:hover {
       background: #d97706;
     }
 
-    .back {
-      display: block;
-      text-align: center;
+    .back-link {
+      display: inline-block;
       margin-top: 20px;
-      color: #374151;
+      color: #555;
       text-decoration: none;
-    }
-
-    footer {
-      margin-top: 60px;
-      padding: 30px;
-      text-align: center;
-      background: #111827;
-      color: white;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  LISENZO TOP UP
+<header class="header">
+  <div class="brand">
+    LISENZO <span>TOP UP</span>
+  </div>
+
+  <a class="admin-link" href="admin.html">
+    Admin
+  </a>
 </header>
 
-<div class="container">
+<main>
 
-  <div class="card">
+  <div class="order-box">
 
-    <h1>⚽ Order Now</h1>
+    <h1>🛒 Order Now</h1>
 
-    <div class="product">
-      <div class="product-name" id="productName">
-        eFootball Coins
-      </div>
+    <div class="selected-product">
 
-      <div class="price" id="productPrice">
-        ৳0
-      </div>
+      <h2 id="coinText">eFootball Coins</h2>
+
+      <p>
+        মূল্য:
+        <strong id="priceText">৳0</strong>
+      </p>
+
     </div>
 
     <form id="orderForm">
 
-      <label for="name">আপনার নাম</label>
-      <input
-        type="text"
-        id="name"
-        placeholder="আপনার নাম লিখুন"
-        required
+      <div class="form-group">
+        <label for="playerId">
+          eFootball Player ID
+        </label>
+
+        <input
+          type="text"
+          id="playerId"
+          required
+          placeholder="আপনার Player ID লিখুন"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="phone">
+          মোবাইল নম্বর
+        </label>
+
+        <input
+          type="tel"
+          id="phone"
+          required
+          placeholder="01XXXXXXXXX"
+        >
+      </div>
+
+      <button
+        type="submit"
+        class="submit-btn"
       >
-
-      <label for="phone">মোবাইল নম্বর</label>
-      <input
-        type="tel"
-        id="phone"
-        placeholder="01XXXXXXXXX"
-        required
-      >
-
-      <label for="gameId">eFootball User ID</label>
-      <input
-        type="text"
-        id="gameId"
-        placeholder="আপনার eFootball ID লিখুন"
-        required
-      >
-
-      <label for="payment">Payment Method</label>
-      <select id="payment" required>
-        <option value="">Payment Method নির্বাচন করুন</option>
-        <option value="bKash">bKash</option>
-        <option value="Nagad">Nagad</option>
-        <option value="Rocket">Rocket</option>
-      </select>
-
-      <label for="transaction">Transaction ID</label>
-      <input
-        type="text"
-        id="transaction"
-        placeholder="Payment করার পর Transaction ID দিন"
-        required
-      >
-
-      <button type="submit">
         Confirm Order
       </button>
 
     </form>
 
-    <a class="back" href="index.html">
-      ← ফিরে যান
+    <a href="index.html" class="back-link">
+      ← প্যাকেজে ফিরে যান
     </a>
 
   </div>
 
-</div>
+</main>
 
-<footer>
-  <strong>LISENZO TOP UP</strong><br>
-  eFootball Coin Top-Up Service<br><br>
-  © 2026 LISENZO TOP UP
+<footer class="footer">
+
+  <strong>LISENZO TOP UP</strong>
+
+  <div>
+    eFootball Coin Top-Up Service
+  </div>
+
+  <div>
+    © 2026 LISENZO TOP UP
+  </div>
+
 </footer>
 
 
 <script>
 
-  // URL থেকে product information নেওয়া
-  const params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(
+    window.location.search
+  );
 
-  const product = params.get("product") || "eFootball Coins";
-  const price = params.get("price") || "0";
+  const coins = params.get("coins");
+  const price = params.get("price");
 
-  document.getElementById("productName").textContent = product;
-  document.getElementById("productPrice").textContent = "৳" + price;
+  if (coins && price) {
+
+    document.getElementById("coinText").textContent =
+      coins + " eFootball Coins";
+
+    document.getElementById("priceText").textContent =
+      "৳" + price;
+
+  }
 
 
-  // Order submit
-  document.getElementById("orderForm").addEventListener("submit", function(e) {
+  document.getElementById("orderForm").addEventListener(
+    "submit",
+    function(event) {
 
-    e.preventDefault();
+      event.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const gameId = document.getElementById("gameId").value.trim();
-    const payment = document.getElementById("payment").value;
-    const transaction = document.getElementById("transaction").value.trim();
+      const playerId =
+        document.getElementById("playerId").value.trim();
 
-    if (!name || !phone || !gameId || !payment || !transaction) {
-      alert("সব তথ্য পূরণ করুন।");
-      return;
+      const phone =
+        document.getElementById("phone").value.trim();
+
+      if (!playerId || !phone) {
+        alert("সব তথ্য পূরণ করুন।");
+        return;
+      }
+
+      alert(
+        "Order received!\n\n" +
+        coins + " Coins\n" +
+        "Price: ৳" + price + "\n" +
+        "Player ID: " + playerId + "\n" +
+        "Phone: " + phone
+      );
+
     }
-
-    const order = {
-      product: product,
-      price: price,
-      name: name,
-      phone: phone,
-      gameId: gameId,
-      payment: payment,
-      transaction: transaction,
-      time: new Date().toLocaleString()
-    };
-
-    console.log("ORDER:", order);
-
-    alert(
-      "অর্ডার তথ্য গ্রহণ করা হয়েছে।\n\n" +
-      "Product: " + product + "\n" +
-      "Price: ৳" + price + "\n\n" +
-      "পরবর্তী ধাপে আমরা এটিকে Admin Panel-এর সাথে সংযুক্ত করব।"
-    );
-
-  });
+  );
 
 </script>
 
